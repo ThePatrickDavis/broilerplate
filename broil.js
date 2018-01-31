@@ -63,8 +63,10 @@ function processTemplate(templatePath, fileName, replacementDictionary) {
     let buffer = fs.readFileSync(templatePath, 'utf8');
     for(let property in replacementDictionary) {
         if(replacementDictionary.hasOwnProperty(property)) {
-            let prop = '\\[' + property + '\f\]';
+            console.log(property);
+            let prop = '\\[' + property + '\\]';
             buffer = buffer.replace(new RegExp(prop, 'g'), replacementDictionary[property]);
+            console.log(buffer);
         }
     }
     return buffer;

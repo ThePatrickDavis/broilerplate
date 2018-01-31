@@ -1,0 +1,28 @@
+{
+  "name": "broilerplate",
+  "version": "1.0.0",
+  "description": "Generate boilerplate code from the command line",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePatrickDavis/broilerplate.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "code",
+    "generateration",
+    "templates"
+  ],
+  "author": "Patrick DAvis",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "broil": "broil.js"
+  },
+  "bugs": {
+    "url": "https://github.com/ThePatrickDavis/broilerplate/issues"
+  },
+  "homepage": "https://github.com/ThePatrickDavis/broilerplate#readme"
+}

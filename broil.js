@@ -36,13 +36,13 @@ if(!file.directoryExists(broilPath)) {
         };
         if(file.directoryExists(templatePath)) {
             let templateFiles = fs.readdirSync(templatePath);
-            let newPath = path.join(workingPath, fileName.toLowerCase());
+            let newPath = path.join(workingPath, file.getCssFriendlyName(fileName));
             fs.mkdirSync(newPath);
-            templateFiles.forEach((file) => {
-                let data = processTemplate(path.join(templatePath, file), fileName, replacementObject);
+            templateFiles.forEach((templateFile) => {
+                let data = processTemplate(path.join(templatePath, templateFile), fileName, replacementObject);
                 // Write out files with new values
-                let newFileName = path.join(newPath, fileName.toLowerCase() + '.' + file);
-                console.log('Broiling up ' + fileName.toLowerCase() + '.' + file);
+                let newFileName = path.join(newPath, file.getCssFriendlyName(fileName) + '.' + templateFile);
+                console.log('Broiling up ' + file.getCssFriendlyName(fileName) + '.' + templateFile);
                 fs.writeFile(newFileName, data, { encoding: 'utf8'}, (error) => handleWriteError(error));
             });
         } else if(file.fileExists(templatePath)) {
